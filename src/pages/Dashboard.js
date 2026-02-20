@@ -63,13 +63,32 @@ function Dashboard() {
 
       {/* ABOUT */}
       <section ref={aboutRef} className="section">
-        <h2 className="section-title">About Me</h2>
-        <div className="section-divider"></div>
-        <p className="section-text">
-          I am a Secong-Year B.Tech Information Technology student with hands-on experience
-          building full-stack applications using React, Spring Boot, and Node.js.
-        </p>
-      </section>
+  <h2 className="section-title">About Me</h2>
+  <div className="section-divider"></div>
+
+  <p className="section-text">
+    I am a B.Tech Information Technology student with a strong interest in
+    full-stack web development and building practical, real-world applications.
+    I enjoy turning ideas into functional products using clean, maintainable
+    code and modern development practices.
+  </p>
+
+  <p className="section-text" style={{ marginTop: "20px" }}>
+    I have hands-on experience working with technologies such as React,
+    Spring Boot, Node.js, and databases like MySQL and MongoDB. Through my
+    projects, I have implemented REST APIs, authentication mechanisms,
+    database integration, and cloud deployment workflows.
+  </p>
+
+  <p className="section-text" style={{ marginTop: "20px" }}>
+    I am particularly interested in roles where I can contribute as a
+    full-stack or frontend developer, learn from experienced engineers, and
+    continuously improve my problem-solving and system design skills. I am
+    actively seeking internship opportunities where I can grow professionally
+    while contributing meaningful value to the team.
+  </p>
+</section>
+
 
       {/* RESUME */}
       <section ref={resumeRef} className="section alt">
@@ -144,7 +163,7 @@ function Dashboard() {
             title="GuideU"
             desc="Mentorship platform for students."
             github="https://github.com/sruthi20-07/GuideU"
-            live="https://guideu-12837.web.app/"
+            live="https://guideu-12837.web.app"
           />
         </div>
       </section>
