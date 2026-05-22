@@ -3,12 +3,25 @@ import React, { useEffect, useRef } from "react";
 function useFadeUp(ref) {
   useEffect(() => {
     const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { e.target.classList.add("visible"); } },
+      ([e]) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+        }
+      },
       { threshold: 0.12 }
     );
-    const el = ref.current;
-    if (el) obs.observe(el);
-    return () => el && obs.unobserve(el);
+
+    const currentRef = ref.current;
+
+    if (currentRef) {
+      obs.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        obs.unobserve(currentRef);
+      }
+    };
   }, [ref]);
 }
 

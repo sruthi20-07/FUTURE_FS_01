@@ -72,15 +72,50 @@ export default function Hero() {
           </a>
         </div>
 
+        
         <div className="hero-socials">
-          {[
-            { href:"https://github.com/sruthi20-07", label:"GitHub", icon:"⌥" },
-            { href:"https://www.linkedin.com/in/sruthi-vindula-84437932b", label:"LinkedIn", icon:"in" },
-            { href:"mailto:vindulasruthi20@gmail.com", label:"Email", icon:"@" },
-          ].map(s => (
+  {[
+    {
+      href:"https://github.com/sruthi20-07",
+      label:"GitHub",
+      icon:(
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.26 9.27 7.78 10.78.57.1.78-.25.78-.56v-2.02c-3.17.69-3.84-1.36-3.84-1.36-.52-1.3-1.27-1.65-1.27-1.65-1.04-.71.08-.69.08-.69 1.15.08 1.75 1.18 1.75 1.18 1.02 1.74 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.05-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.59.23 2.77.11 3.06.73.79 1.17 1.81 1.17 3.05 0 4.37-2.66 5.34-5.2 5.63.41.35.77 1.04.77 2.1v3.11c0 .31.21.67.79.56 4.51-1.51 7.77-5.76 7.77-10.78C23.25 5.48 18.27.5 12 .5z"/>
+        </svg>
+      )
+    },
+
+    {
+      href:"https://www.linkedin.com/in/sruthi-vindula-84437932b",
+      label:"LinkedIn",
+      icon:"in"
+    },
+
+    {
+      href:"mailto:vindulasruthi20@gmail.com",
+      label:"Email",
+      icon:"@"
+    },
+  ].map(s => (
             <a key={s.label} href={s.href} className="hero-social-btn"
               title={s.label} target={s.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
-              <span style={{ fontWeight:700, fontSize:13 }}>{s.icon}</span>
+             <span
+  style={{
+    fontWeight:700,
+    fontSize:13,
+    display:"flex",
+    alignItems:"center",
+    justifyContent:"center"
+  }}
+>
+  {s.icon}
+</span>
             </a>
           ))}
         </div>
@@ -100,26 +135,63 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* RIGHT — photo */}
-      <div className="hero-photo-wrap">
-        <div className="hero-photo-ring">
-          {/* If you have your photo uncomment the line below and remove the placeholder div */}
-          {/* <img src={photo} alt="Vindula Sruthi" className="hero-photo" /> */}
-          <img
-  src={photo}
-  alt="Vindula Sruthi"
-  className="hero-photo"
-/>
-        </div>
+     {/* RIGHT — photo */}
+<div className="hero-photo-wrap">
 
-        {/* floating tech badges */}
-        <div className="hero-float-badges">
-          <div className="float-badge" style={{ top:"5%", left:"-15px" }}>⚛️ React</div>
-          <div className="float-badge" style={{ top:"20%", right:"-15px" }}>☕ Spring Boot</div>
-          <div className="float-badge" style={{ bottom:"25%", right:"-15px" }}> 🔥 Firebase</div>
-          <div className="float-badge" style={{ bottom:"5%", left:"-5px" }}> ▲ Vercel</div>
-        </div>
-      </div>
+  {/* PERSONAL DETAILS CARD */}
+  <div className="hero-personal-card">
+    <h3>Vindula Sruthi</h3>
+
+    <p>2nd Year B.Tech IT Student</p>
+
+    <span>
+      Full Stack Developer 
+    </span>
+  </div>
+
+  <div className="hero-photo-ring">
+
+    <img
+      src={photo}
+      alt="Vindula Sruthi"
+      className="hero-photo"
+    />
+
+  </div>
+
+  {/* floating tech badges */}
+  <div className="hero-float-badges">
+
+    <div
+      className="float-badge"
+      style={{ top:"35%", left:"-15px" }}
+    >
+      ⚛️ React
+    </div>
+
+    <div
+      className="float-badge"
+      style={{ top:"50%", right:"-15px" }}
+    >
+      ☕ Spring Boot
+    </div>
+
+    <div
+      className="float-badge"
+      style={{ bottom:"5%", right:"-15px" }}
+    >
+      🔥 Firebase
+    </div>
+
+    <div
+      className="float-badge"
+      style={{ bottom:"5%", left:"-5px" }}
+    >
+      ▲ Vercel
+    </div>
+
+  </div>
+</div>
     </section>
   );
 }
