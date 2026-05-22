@@ -325,9 +325,17 @@ export default function Projects() {
       { threshold: 0.05 }
     );
 
-    if (ref.current) obs.observe(ref.current);
+   const currentRef = ref.current;
 
-    return () => ref.current && obs.unobserve(ref.current);
+if (currentRef) {
+  obs.observe(currentRef);
+}
+
+return () => {
+  if (currentRef) {
+    obs.unobserve(currentRef);
+  }
+};
   }, []);
 
   return (

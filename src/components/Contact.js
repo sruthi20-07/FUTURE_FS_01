@@ -34,8 +34,17 @@ export default function Contact() {
       ([e]) => { if (e.isIntersecting) e.target.classList.add("visible"); },
       { threshold: 0.1 }
     );
-    if (ref.current) obs.observe(ref.current);
-    return () => ref.current && obs.unobserve(ref.current);
+    const currentRef = ref.current;
+
+if (currentRef) {
+  obs.observe(currentRef);
+}
+
+return () => {
+  if (currentRef) {
+    obs.unobserve(currentRef);
+  }
+};
   }, []);
 
   const handleSubmit = (e) => {
